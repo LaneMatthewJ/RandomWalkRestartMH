@@ -182,10 +182,19 @@ normalize.multiplex.adjacency <- function(x)
         stop("Not a dgCMatrix object of Matrix package")
     }
     
-    Adj_Matrix_Norm <- t(t(x)/(Matrix::colSums(x, na.rm = FALSE, dims = 1,
-        sparseResult = FALSE)))
+    column_sums <- Matrix::colSums(x, na.rm = FALSE, dims = 1, sparseResult = FALSE)
+    column_sums_masked <- column_sums[ column_sums != 0 ]
+    mask_names <- names(column_sums_masked)
     
-    return(Adj_Matrix_Norm)
+    x[, mask_names] <- t(t(x)[mask_names, ] / column_sums_masked)
+    # Adj_Matrix_Norm <- t(
+    #     t(x)[,mask_names]/(
+
+    #         )
+    # )
+    
+    # return(Adj_Matrix_Norm)
+    x
 }
 
 ## Roxy Documentation comments
