@@ -187,13 +187,6 @@ normalize.multiplex.adjacency <- function(x)
     mask_names <- names(column_sums_masked)
     
     x[, mask_names] <- t(t(x)[mask_names, ] / column_sums_masked)
-    # Adj_Matrix_Norm <- t(
-    #     t(x)[,mask_names]/(
-
-    #         )
-    # )
-    
-    # return(Adj_Matrix_Norm)
     x
 }
 
