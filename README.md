@@ -2,10 +2,12 @@
 
 # RandomWalkRestartMH: An R package to perform Random Walk with Restart
 
-## Forked and Modified for RWRtools
+## Forked and Modified for RWRtools and MENTOR use with Ablation. 
 
 This version of **RandomWalkRestartMH** has been edited to fix some bugs and 
-add Seed weighting functionality
+add Seed weighting functionality, additionally, this fork allows for users 
+to set the Tau parameter to 0 to effectively remove a layer from the 
+multiplex network. 
 
 ## Overview 
 
